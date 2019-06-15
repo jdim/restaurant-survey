@@ -19,6 +19,8 @@ npm start
 npm run build
 ```
 
+Then check ./client/build/
+
 ## Build minified version and run simple Express server
 
 ```sh
