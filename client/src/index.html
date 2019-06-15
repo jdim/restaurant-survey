@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Restaurant Survey</title>
+    <link rel="stylesheet" href="/css/style.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway:500"
+      rel="stylesheet"
+    />
+    <meta name="author" content="Dmitriy Khabarov" />
+    <meta
+      name="description"
+      content="Restaurant survey form. Also my skills demo and assessment to freecodecamp.org"
+    />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="robots" content="noindex" />
+  </head>
+  <body>
+    <main class="main">
+      <header class="header">
+        <h1 class="header__title">Restaurant Survey</h1>
+
+        <div class="header__content">
+          <div>
+            <i class="dish-icon">&nbsp;</i>
+          </div>
+          <div class="about header__about">
+            <p class="about__text">
+              <strong>Please help us learn</strong><br />what we're doing right
+              and<br />what we need more work<br />on by filling out this card
+            </p>
+            <p class="about__required">
+              Required fields are followed by <abbr title="required">*</abbr>
+            </p>
+          </div>
+        </div>
+      </header>
+
+      <form id="survey-form" class="survey-form">
+        <div class="party form-section">
+          <div class="form-group party__item">
+            <label for="visitors_total">
+              How many in your party?
+            </label>
+            <input
+              type="number"
+              name="visitors_total"
+              id="visitors_total"
+              min="1"
+              max="20"
+              placeholder="2"
+              autofocus
+            />
+          </div>
+
+          <div class="form-group party__item">
+            <label for="date"> Date: <abbr title="required">*</abbr> </label>
+            <input type="date" name="date" id="date" required />
+          </div>
+        </div>
+
+        <div class="meal form-section">
+          <fieldset class="meal__type">
+            <legend>Meal:</legend>
+            <ul class="choice-list">
+              <li class="choice-list__item">
+                <input
+                  type="radio"
+                  name="meal"
+                  value="dinein"
+                  id="mealDinein"
+                />
+                <label for="mealDinein"> Dine in </label>
+              </li>
+              <li class="choice-list__item">
+                <input
+                  type="radio"
+                  name="meal"
+                  value="takeout"
+                  id="mealTakeout"
+                />
+                <label for="mealTakeout"> Take out </label>
+              </li>
+              <li class="choice-list__item">
+                <input
+                  type="radio"
+                  name="meal"
+                  value="breakfast"
+                  id="mealBreakfast"
+                />
+                <label for="mealBreakfast"> Breakfast </label>
+              </li>
+              <li class="choice-list__item">
+                <input type="radio" name="meal" value="lunch" id="mealLunch" />
+                <label for="mealLunch"> Lunch </label>
+              </li>
+              <li class="choice-list__item">
+                <input
+                  type="radio"
+                  name="meal"
+                  value="dinner"
+                  id="mealDinner"
+                />
+                <label for="mealDinner"> Dinner </label>
+              </li>
+            </ul>
+          </fieldset>
+
+          <div class="form-group meal__server">
+            <label for="waiter"> The name of your server: </label>
+            <input type="text" name="waiter" placeholder="Sara" id="waiter" />
+          </div>
+
+          <div class="meal__order">
+            <label for="order">What did you order?</label>
+            <textarea name="order" rows="3" cols="10" id="order"></textarea>
+          </div>
+
+          <fieldset class="meal__quality">
+            <legend>Quality of food: *</legend>
+            <ul class="choice-list">
+              <li class="choice-list__item">
+                <input
+                  type="radio"
+                  name="quality"
+                  value="excellent"
+                  id="qualityExcellent"
+                />
+                <label for="qualityExcellent"> Excellent </label>
+              </li>
+              <li class="choice-list__item">
+                <input
+                  type="radio"
+                  name="quality"
+                  value="good"
+                  id="qualityGood"
+                />
+                <label for="qualityGood"> Good </label>
+              </li>
+              <li class="choice-list__item">
+                <input
+                  type="radio"
+                  name="quality"
+                  value="fair"
+                  id="qualityFair"
+                />
+                <label for="qualityFair"> Fair </label>
+              </li>
+              <li class="choice-list__item">
+                <input
+                  type="radio"
+                  name="quality"
+                  value="poor"
+                  id="qualityPoor"
+                />
+                <label for="qualityPoor"> Poor </label>
+              </li>
+            </ul>
+          </fieldset>
+        </div>
+
+        <div class="detail-marks form-section">
+          <fieldset>
+            <legend>Portion size: *</legend>
+            <ul class="choice-list">
+              <li class="choice-list__item">
+                <input
+                  type="radio"
+                  name="portion"
+                  value="excellent"
+                  id="portionExcellent"
+                />
+                <label for="portionExcellent"> Excellent </label>
+              </li>
+              <li class="choice-list__item">
+                <input
+                  type="radio"
+                  name="portion"
+                  value="good"
+                  id="portionGood"
+                />
+                <label for="portionGood"> Good </label>
+              </li>
+              <li class="choice-list__item">
+                <input
+                  type="radio"
+                  name="portion"
+                  value="fair"
+                  id="portionFair"
+                />
+                <label for="portionFair"> Fair </label>
+              </li>
+              <li class="choice-list__item">
+                <input
+                  type="radio"
+                  name="portion"
+                  value="poor"
+                  id="portionPoor"
+                />
+                <label for="portionPoor"> Poor </label>
+              </li>
+            </ul>
+          </fieldset>
+
+          <fieldset>
+            <legend>Ease of Ordering:</legend>
+            <ul class="choice-list">
+              <li class="choice-list__item">
+                <input
+                  type="radio"
+                  name="ease"
+                  value="excellent"
+                  id="easeExcellent"
+                />
+                <label for="easeExcellent"> Excellent </label>
+              </li>
+              <li class="choice-list__item">
+                <input type="radio" name="ease" value="good" id="easeGood" />
+                <label for="easeGood"> Good </label>
+              </li>
+              <li class="choice-list__item">
+                <input type="radio" name="ease" value="fair" id="easeFair" />
+                <label for="easeFair"> Fair </label>
+              </li>
+              <li class="choice-list__item">
+                <input type="radio" name="ease" value="poor" id="easePoor" />
+                <label for="easePoor"> Poor </label>
+              </li>
+            </ul>
+          </fieldset>
+
+          <fieldset>
+            <legend>Service: *</legend>
+            <ul class="choice-list">
+              <li class="choice-list__item">
+                <input
+                  type="radio"
+                  name="service"
+                  value="excellent"
+                  id="serviceExcellent"
+                />
+                <label for="serviceExcellent"> Excellent </label>
+              </li>
+              <li class="choice-list__item">
+                <input
+                  type="radio"
+                  name="service"
+                  value="good"
+                  id="serviceGood"
+                />
+                <label for="serviceGood"> Good </label>
+              </li>
+              <li class="choice-list__item">
+                <input
+                  type="radio"
+                  name="service"
+                  value="fair"
+                  id="serviceFair"
+                />
+                <label for="serviceFair"> Fair </label>
+              </li>
+              <li class="choice-list__item">
+                <input
+                  type="radio"
+                  name="service"
+                  value="poor"
+                  id="servicePoor"
+                />
+                <label for="servicePoor"> Poor </label>
+              </li>
+            </ul>
+          </fieldset>
+
+          <fieldset>
+            <legend>Cleanliness:</legend>
+            <ul class="choice-list">
+              <li class="choice-list__item">
+                <input
+                  type="radio"
+                  name="clean"
+                  value="excellent"
+                  id="cleanExcellent"
+                />
+                <label for="cleanExcellent"> Excellent </label>
+              </li>
+              <li class="choice-list__item">
+                <input type="radio" name="clean" value="good" id="cleanGood" />
+                <label for="cleanGood"> Good </label>
+              </li>
+              <li class="choice-list__item">
+                <input type="radio" name="clean" value="fair" id="cleanFair" />
+                <label for="cleanFair"> Fair </label>
+              </li>
+              <li class="choice-list__item">
+                <input type="radio" name="clean" value="poor" id="cleanPoor" />
+                <label for="cleanPoor"> Poor </label>
+              </li>
+            </ul>
+          </fieldset>
+
+          <fieldset>
+            <legend>Overall Value: *</legend>
+            <ul class="choice-list">
+              <li class="choice-list__item">
+                <input
+                  type="radio"
+                  name="overall"
+                  value="excellent"
+                  id="overallExcellent"
+                />
+                <label for="overallExcellent"> Excellent </label>
+              </li>
+              <li class="choice-list__item">
+                <input
+                  type="radio"
+                  name="overall"
+                  value="good"
+                  id="overallGood"
+                />
+                <label for="overallGood"> Good </label>
+              </li>
+              <li class="choice-list__item">
+                <input
+                  type="radio"
+                  name="overall"
+                  value="fair"
+                  id="overallFair"
+                />
+                <label for="overallFair"> Fair </label>
+              </li>
+              <li class="choice-list__item">
+                <input
+                  type="radio"
+                  name="overall"
+                  value="poor"
+                  id="overallPoor"
+                />
+                <label for="overallPoor"> Poor </label>
+              </li>
+            </ul>
+          </fieldset>
+        </div>
+
+        <div class="customer form-section">
+          <div class="customer__comments">
+            <label>Comments?</label>
+            <textarea name="comments" rows="3" cols="50"></textarea>
+          </div>
+
+          <fieldset class="customer__age">
+            <legend>Age?</legend>
+            <ul class="choice-list">
+              <li class="choice-list__item">
+                <input type="radio" name="age" value="lt18" id="ageLt18" />
+                <label for="ageLt18"> 18 </label>
+              </li>
+              <li class="choice-list__item">
+                <input type="radio" name="age" value="19to34" id="age19to34" />
+                <label for="age19to34">19-34 </label>
+              </li>
+              <li class="choice-list__item">
+                <input type="radio" name="age" value="35to54" id="age35to54" />
+                <label for="age35to54">35-54 </label>
+              </li>
+              <li class="choice-list__item">
+                <input type="radio" name="age" value="gt55" id="ageGt55" />
+                <label for="ageGt55">55+ </label>
+              </li>
+            </ul>
+          </fieldset>
+
+          <div class="customer__gender">
+            <label for="gender">Gender: </label>
+            <select name="gender" id="gender">
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <fieldset class="customer__source">
+            <legend>How did you learn about us?</legend>
+            <ul class="choice-list">
+              <li class="choice-list__item">
+                <input
+                  type="checkbox"
+                  name="source"
+                  value="newspaper"
+                  id="sourceNewspaper"
+                />
+                <label for="sourceNewspaper"> Newspaper </label>
+              </li>
+              <li class="choice-list__item">
+                <input type="checkbox" name="source" value="TV" id="sourceTV" />
+                <label for="sourceTV">TV </label>
+              </li>
+              <li class="choice-list__item">
+                <input
+                  type="checkbox"
+                  name="source"
+                  value="radio"
+                  id="sourceRadio"
+                />
+                <label for="sourceRadio">Radio </label>
+              </li>
+              <li class="choice-list__item">
+                <input
+                  type="checkbox"
+                  name="source"
+                  value="friend"
+                  id="sourceFriend"
+                />
+                <label for="sourceFriend">Friend </label>
+              </li>
+              <li class="choice-list__item">
+                <input
+                  type="checkbox"
+                  name="source"
+                  value="other"
+                  id="sourceOther"
+                />
+                <label for="sourceOther">Other </label>
+                <div class="source-other-text">
+                  <label for="sourceOtherText" hidden>Learned from:</label>
+                  <input type="text" name="source_other" id="sourceOtherText" />
+                </div>
+              </li>
+            </ul>
+          </fieldset>
+
+          <div class="customer__contacts contacts">
+            <div class="form-group customer-name">
+              <label for="customerName"> Please enter your name: </label>
+              <input
+                type="text"
+                name="name"
+                placeholder="Ainsley Harriott"
+                id="customerName"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="customerEmail"> and email: </label>
+              <input
+                type="email"
+                name="email"
+                placeholder="awesome@mail.com"
+                id="customerEmail"
+                required
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="submit">
+          <button type="submit" class="submit-btn">Submit</button>
+          <p class="submit-status hidden">Thanks :)</p>
+        </div>
+      </form>
+      <p class="author-credit">
+        Icons made by
+        <a href="https://www.flaticon.com/authors/pause08" title="Pause08"
+          >Pause08</a
+        >
+        from
+        <a href="https://www.flaticon.com/" title="Flaticon"
+          >www.flaticon.com</a
+        >
+        is licensed by
+        <a
+          href="http://creativecommons.org/licenses/by/3.0/"
+          title="Creative Commons BY 3.0"
+          target="_blank"
+          >CC 3.0 BY</a
+        >
+      </p>
+    </main>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="/js/all.js"></script>
+  </body>
+</html>

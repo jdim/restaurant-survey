@@ -1,0 +1,383 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Raleway", Helvetica, sans-serif;
+  color: #414288;
+  background: white;
+}
+
+.main {
+  padding: 16px;
+  background: #f9f9f9;
+}
+
+@media (min-width: 1100px) {
+  main {
+    max-width: 1100px;
+    border-radius: 5px;
+    margin: 16px auto;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.3);
+  }
+}
+
+/****************\
+  #HEADER
+\****************/
+
+.header__title {
+  text-align: center;
+}
+
+.header__content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dish-icon {
+  display: inline-block;
+  opacity: 0.5;
+  background: url("/images/dish.svg") no-repeat center;
+  width: 100px;
+  height: 100px;
+  animation: dish-icon 0.6s ease-in-out 0.2s both;
+}
+
+@keyframes dish-icon {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.header__about {
+  padding-left: 15px;
+}
+
+.about__text {
+  margin-top: 0;
+  text-align: right;
+  animation: about__text 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1s both;
+}
+
+@keyframes about__text {
+  0% {
+    transform: rotateY(-100deg);
+    transform-origin: right;
+    opacity: 0;
+  }
+  100% {
+    transform: rotateY(0);
+    transform-origin: right;
+    opacity: 1;
+  }
+}
+
+.about__required {
+  font-size: 14px;
+}
+
+/****************\
+  #FORM/ELEMENTS
+\****************/
+
+input,
+textarea,
+select,
+button,
+fieldset {
+  background-color: white;
+  border: 1px solid #bfbfbf;
+  margin: 0;
+}
+
+fieldset {
+  border-radius: 5px;
+  margin: 0;
+}
+
+input,
+textarea,
+select,
+button {
+  font-size: 18px;
+  color: #414288;
+  padding: 4px 7px;
+  box-sizing: border-box;
+}
+
+button {
+  padding: 8px 18px;
+}
+
+input,
+select {
+  height: 38px;
+}
+
+textarea {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+label + textarea {
+  box-sizing: border-box;
+  width: 100%;
+  margin-top: 5px;
+}
+
+/****************\
+  #FORM/GENERIC
+\****************/
+
+.form-section {
+  margin-top: 16px;
+}
+
+.form-section:first-child {
+  margin-top: 0;
+}
+
+.form-group {
+  box-sizing: border-box;
+  display: flex;
+  align-items: baseline;
+}
+
+.form-group > label {
+  margin-right: 10px;
+}
+
+.form-group > input,
+.form-group > select {
+  flex: auto;
+}
+
+.choice-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  line-height: 1.8;
+}
+
+.choice-list__item {
+  display: flex;
+  align-items: center;
+}
+
+.choice-list__item > input + label,
+.choice-list__item > label + input {
+  margin-left: 10px;
+}
+
+/****************\
+  #FORM/PARTY
+\****************/
+
+.party {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.party__item {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.party__item:last-child {
+  margin-bottom: 0;
+}
+
+@media (min-width: 600px) {
+  .party__item {
+    width: 50%;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .party__item:last-child {
+    padding-right: 0;
+  }
+
+  .party__item:first-child {
+    padding-left: 0;
+  }
+}
+
+/****************\
+  #FORM/MEAL
+\****************/
+
+.meal {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  gap: 16px;
+  grid-template-areas:
+    "meal"
+    "server"
+    "order"
+    "quality";
+}
+
+.meal__type {
+  grid-area: meal;
+}
+
+.meal__server {
+  grid-area: server;
+}
+
+.meal__order {
+  grid-area: order;
+}
+
+.meal__quality {
+  grid-area: quality;
+}
+
+@media (min-width: 500px) {
+  .meal {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 16px;
+    grid-template-areas:
+      "meal quality"
+      "server server"
+      "order order";
+  }
+}
+
+/****************\
+  #FORM/DETAIL MARKS
+\****************/
+
+.detail-marks {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  gap: 16px;
+}
+
+@media (min-width: 500px) {
+  .detail-marks {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 16px;
+  }
+}
+
+@media (min-width: 700px) {
+  .detail-marks {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width: 1100px) {
+  .detail-marks {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+}
+
+/****************\
+  #FORM/CUSTOMER
+\****************/
+
+.customer {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "comments"
+    "age"
+    "gender"
+    "source"
+    "contacts";
+  gap: 16px;
+}
+
+.customer__comments {
+  grid-area: comments;
+}
+
+.customer__age {
+  grid-area: age;
+}
+
+.customer__gender {
+  grid-area: gender;
+}
+
+.customer__source {
+  grid-area: source;
+}
+
+.customer__contacts {
+  grid-area: contacts;
+}
+
+@media (min-width: 500px) {
+  .customer {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "contacts contacts"
+      "age source"
+      "comments comments"
+      "gender .";
+  }
+}
+
+.contacts {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  gap: 16px;
+}
+
+@media (min-width: 700px) {
+  .contacts {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .customer-name {
+    align-items: center;
+  }
+}
+
+.source-other-text {
+  margin-left: 10px;
+}
+
+.source-other-text > input {
+  width: 100%;
+}
+
+.author-credit {
+  font-size: 0.7em;
+  text-align: center;
+}
+
+/****************\
+  #FORM/SUBMIT
+\****************/
+
+.submit {
+  text-align: center;
+}
+
+.submit-btn {
+  color: #e55381;
+}
+
+.submit-status {
+  display: inline-block;
+  margin: 0;
+  padding: 10px 0;
+}
+
+.hidden {
+  display: none;
+}
